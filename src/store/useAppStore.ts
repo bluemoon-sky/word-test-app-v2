@@ -55,10 +55,10 @@ export const useAppStore = create<AppState>()(
 
                 // Update User State
                 const newState = {
-                    userId: state.profile.userId,
+                    ...current, // retain existing state
+                    ...next,    // apply SRS updates
+                    userId: state.profile.userId, // ensure identity
                     wordId,
-                    ...current, // retain unchecked fields if any
-                    ...next
                 } as UserWordState;
 
                 return {
