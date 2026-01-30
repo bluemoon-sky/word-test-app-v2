@@ -5,6 +5,9 @@
   "installCommand": "npm install",
   "framework": null,
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/((?!assets|_expo|favicon.ico).*)",
+      "destination": "/index.html"
+    }
   ]
 }
